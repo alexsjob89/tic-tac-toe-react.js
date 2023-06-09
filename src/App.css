@@ -1,38 +1,130 @@
-.App {
-  text-align: center;
+* {
+    font-family: sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    box-sizing: border-box;
+    background-image: linear-gradient(to bottom right, rgb(160, 244, 255), rgba(167, 200, 253, 0.992) 60%);
+    height: 70rem;
+    overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.game-board {
+    position: relative;
+    display: block;
+    /* border: 1px solid black; */
+    max-width: 45rem;
+    min-height: 45rem;
+    left: 35%;
+    top: 3rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: 0px 0px 25px 4px rgba(0, 0, 0, 0.40);
+    background-image: linear-gradient(to bottom right, rgb(160, 244, 255), rgba(167, 200, 253, 0.992));
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.board-row {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 10rem);
+    grid-template-rows: repeat(3, 10rem);
+    /* border: 1px solid black; */
+    width: 30rem;
+    height: 10rem;
+    margin: auto;
+    top: 6rem;
 }
 
-.App-link {
-  color: #61dafb;
+.square {
+    background: none;
+    border: 1px solid rgb(207, 207, 207);
+    background-color: rgba(255, 255, 255, 0.344);
+    font-size: 6rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.square:hover {
+    background-color: rgba(255, 255, 255, 0.486);
+    transform: scale(1.04);
+    transition: 0.8s;
+}
+
+.square:nth-child(1) {
+    border: none;
+    border-top-left-radius: 12px;
+}
+
+.square:nth-child(2) {
+    border-top: none;
+}
+
+.square:nth-child(3) {
+    border: none;
+    border-top-right-radius: 12px;
+}
+
+.square:nth-child(4) {
+    border-left: none;
+}
+
+.square:nth-child(5) {
+    border: none;
+}
+
+.square:nth-child(6) {
+    border-right: none;
+}
+
+.square:nth-child(7) {
+    border: none;
+    border-bottom-left-radius: 12px;
+}
+
+.square:nth-child(8) {
+    border-bottom: none;
+}
+
+.square:nth-child(9) {
+    border: none;
+    border-bottom-right-radius: 12px;
+}
+
+.game-board>button {
+    position: relative;
+    font-size: 20px;
+    top: 4rem;
+    padding: 10px;
+    border-radius: 8px;
+    background: none;
+}
+
+.game-board>button:hover {
+    background-color: rgba(255, 255, 255, 0.344);
+}
+
+.status {
+    font-size: 25px;
+    position: relative;
+    top: 2rem;
+    font-weight: 800;
+}
+
+@media only screen and (min-width: 375px) {
+    .square {
+        font-size: 2rem;
+    }
+    .board-row {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, 7rem);
+        grid-template-rows: repeat(3, 7rem);
+        top: 8rem;
+        left: 3.5rem;
+    }
+    .game-board {
+        width: 28rem;
+        height: 20rem;
+        margin-left: 12px;
+    }
 }
